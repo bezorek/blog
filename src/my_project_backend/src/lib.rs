@@ -14,7 +14,7 @@ thread_local! {
 
 #[ic_cdk::update]
 fn add_blog(title: String, date: u32, content: String, tags: Vec<String>){
-    let blog = Blog::new(title, date, content, tags);
+    let blog = Blog::new(title, content, tags);
     BLOGS.with(|blogs| blogs.borrow_mut().push(blog));
 }
 
